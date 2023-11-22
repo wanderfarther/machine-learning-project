@@ -5,16 +5,16 @@ In this analysis, I have prepared a linear regression machine learning model, as
 I created a graph that compared all the value counts for the features we were focusing on. This shows us a good snapshot of how the data is skewing and an idea of what kind of data is missing. Question 84 has 2 answers that are non-numeric so that is showing an abnormally large amount of missing data that will later be recoded. 
 ![value_counts_overall_barh](https://github.com/wanderfarther/machine-learning-project/assets/132155105/112767f7-01da-42d8-a7f2-4f458ff48279)
 
-I also graphed the value counts of specific features to visualize their distribution. I visualized how many employees reported military service. I did not beleive it was significant enough to delete any data. I visualized the division of male vs female employees and how the outcomes were effected. There is a relatively even distribution, with 10,065 male and 9,091 female employees. After analysing the outcomes of each group, each has about 25% of the employees reporting they would be leaving in the next year. The overall outcome graph showed similar data, with 26% of overall employees reporting they woiuld be leaving.
+I also graphed the value counts of specific features to visualize their distribution. I visualized how many employees reported military service. I did not beleive it was significant enough to delete any data. I visualized the division of male vs female employees and how the outcomes were effected. There is a relatively even distribution, with 10,065 male and 9,091 female employees. After analysing the outcomes of each group, each has about 25% of the employees reporting they would be leaving in the next year. The overall outcome graph showed similar data, with 26% of overall employees reporting they would be leaving.
 
 ## Data Cleaning
 ### Redcuding the Data
 I reduced the data from 116 columns to 31 columns initially. I reduce and combine some columns later.
 
-### Removing unnecessary Data
+### Removing Rows with Missing Data
 In this section, I removed any rows that did not have a response to DLEAVING. This survey is aimed at predicting whether or not an employee is planning on leaving the compnay. If the survey taker did not indicate this, their data is not helpful to this study. I also removed data rows that have more the 15% of the data in the row missing. This removed noise that would hinder the models later on.
 
-### Standardizing and recoding the data
+### Standardizing and Recoding the Data
 In this section I standardized the data. After removing rows with more than 15% missing data, there were still rows with missing data. I replaced that missing data with an average of the feature for each missing data peice. I did this before I recoded question 84 and created dummy variavbles in order to not skew the average. I chose to replace both X and Y in question 84 to a 3 for simplicity. I also made sure that all my dtypes were correct for the next step of creating dummy variables.
 
 ### Creating Dummy Variables
@@ -80,5 +80,5 @@ I completed the same data cleaning measures that were done on the Department of 
 The model had an accuracy score of 69%, which is slightly higher than the model testing data. The f-scores are the same for predicting if an employee is not leaving, but is slightly better at a .59 for predicting that an employee is leaving. 
 
 # Summary
-The best model to use with this data is the second, optimized logsitic regression model. With more study, a higher accuracy rate may have been achieved. The highest accuracy rate I was able to achieve was 76% but that was in a neural network that had a high possibility of erros. I chose to go with a model that is less accurate, but has better prediction scores (f-scores). The features that affect the predicitions the most are the self-reflective features that inlcude how connected an employee feels to their job, how useful they feel at work, and how much they feel they are allowed to accomplish. Creating an environment that encouirages employees and helps them continue to feel necessary and that their talents are well utlizied is the best way to keep employee retention high. 
+The best model to use with this data is the second, optimized logsitic regression model. With more study, a higher accuracy rate may have been achieved. The highest accuracy rate I was able to achieve was 76% but that was in a neural network that had a high possibility of erros. I chose to go with a model that is less accurate, but has better prediction scores (f-scores). The features that affect the predicitions the most are the self-reflective features that inlcude how connected an employee feels to their job, how useful they feel at work, and how much they feel they are allowed to accomplish. Creating an environment that encourages employees and helps them continue to feel necessary and that their talents are well utlizied is the best way to keep employee retention high. 
 
